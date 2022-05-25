@@ -34,8 +34,8 @@
   </form>
 </div>
 <div *ngIf="vista == 'detalle'">
-  {{ personaDetalle.dni }}
-  {{ personaDetalle.nombre }}
-  {{ personaDetalle.edad }}
+  {{ personaDetalle?.dni }}
+  {{ personaDetalle?.nombre }}
+  {{ personaDetalle?.edad }}
   <input type="button" value="volver" (click)="mostrarLista()"/>
 </div>

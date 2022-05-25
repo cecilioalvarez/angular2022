@@ -1,3 +1,4 @@
+import { PersonasService } from './../personas.service';
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona';
 
@@ -10,14 +11,12 @@ export class C5Component implements OnInit {
   vista:String="lista";
   listaPersonas: Persona[] = [];
   personaNueva:Persona= {} as Persona;
-  personaDetalle:Persona= {} as Persona;
+  personaDetalle?:Persona= {} as Persona;
 
 
-  constructor() {
-    this.listaPersonas.push(new Persona('1', 'pere', 20));
-    this.listaPersonas.push(new Persona('2', 'ana', 10));
-    this.listaPersonas.push(new Persona('3', 'maria', 40));
-    this.listaPersonas.push(new Persona('4', 'gema', 30));
+  constructor(private servicio:PersonasService) {
+
+    this.listaPersonas=servicio.buscarTodos();
   }
 
   ngOnInit(): void {}
@@ -27,21 +26,21 @@ export class C5Component implements OnInit {
   }
   borrar(persona: Persona) {
 
-    var posicion=this.listaPersonas.indexOf(persona);
-    this.listaPersonas.splice(posicion,1);
+   this.servicio.borrar(persona);
+
   }
   verFormulario() {
     this.vista="formulario";
   }
   insertarPersona(persona:Persona):void {
 
-    this.listaPersonas.push(persona);
+   this.servicio.insertar(persona);
     this.vista="lista";
   }
 
   detalle(persona:Persona):void {
     this.vista="detalle";
     // asigno el elemento que pulso en la lista
-    this.personaDetalle=persona;
+    this.personaDetalle=this.servicio.buscarUno(persona.dni);
   }
 }
