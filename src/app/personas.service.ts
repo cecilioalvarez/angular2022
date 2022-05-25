@@ -36,4 +36,17 @@ export class PersonasService {
    insertar(persona:Persona) {
     this.listaPersonas.push(persona);
    }
+
+   salvar(persona:Persona) {
+
+      let personaVieja= this.buscarUno(persona.dni);
+
+      if (personaVieja) {
+        personaVieja.nombre=persona.nombre;
+        personaVieja.edad=persona.edad;
+      }
+
+
+
+   }
 }

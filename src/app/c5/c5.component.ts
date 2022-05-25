@@ -48,8 +48,9 @@ export class C5Component implements OnInit {
     this.vista="formularioEditar";
     this.personaEditar=persona;
 
+
   }
   salvarPersona(persona:Persona) {
-
+    this.vista="lista";
   }
 }
