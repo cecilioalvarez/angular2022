@@ -12,6 +12,7 @@ export class C5Component implements OnInit {
   listaPersonas: Persona[] = [];
   personaNueva:Persona= {} as Persona;
   personaDetalle?:Persona= {} as Persona;
+  personaEditar:Persona= {} as Persona;
 
 
   constructor(private servicio:PersonasService) {
@@ -42,5 +43,13 @@ export class C5Component implements OnInit {
     this.vista="detalle";
     // asigno el elemento que pulso en la lista
     this.personaDetalle=this.servicio.buscarUno(persona.dni);
+  }
+  verFormularioEditar(persona:Persona) {
+    this.vista="formularioEditar";
+    this.personaEditar=persona;
+
+  }
+  salvarPersona(persona:Persona) {
+
   }
 }
