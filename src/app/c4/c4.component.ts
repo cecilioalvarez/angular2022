@@ -16,6 +16,7 @@ export class C4Component implements OnInit {
     this.listaPersonas.push(new Persona("3","maria",40));
     this.listaPersonas.push(new Persona("4","gema",30));
 
+
    }
 
   ngOnInit(): void {
