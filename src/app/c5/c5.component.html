@@ -5,9 +5,10 @@
       <td>{{ persona.nombre }}</td>
       <td>{{ persona.edad }}</td>
       <td><input type="button" value="borrar" (click)="borrar(persona)" /></td>
+      <td><input type="button" value="detalle" (click)="detalle(persona)" /></td>
     </tr>
   </table>
-  <input type="button" value="insertar" (click)="verFormulario()"/>
+  <input type="button" value="insertar" (click)="verFormulario()" />
 </div>
 <div *ngIf="vista == 'formulario'">
   <form>
@@ -24,7 +25,17 @@
       Edad:<input type="text" name="edad" [(ngModel)]="personaNueva.edad" />
     </p>
     <p>
-      <input type="button" value="aceptar" (click)="insertarPersona(personaNueva)"/>
+      <input
+        type="button"
+        value="aceptar"
+        (click)="insertarPersona(personaNueva)"
+      />
     </p>
   </form>
+</div>
+<div *ngIf="vista == 'detalle'">
+  {{ personaDetalle.dni }}
+  {{ personaDetalle.nombre }}
+  {{ personaDetalle.edad }}
+  <input type="button" value="volver" (click)="mostrarLista()"/>
 </div>

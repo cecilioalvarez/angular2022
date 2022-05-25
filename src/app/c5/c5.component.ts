@@ -10,6 +10,8 @@ export class C5Component implements OnInit {
   vista:String="lista";
   listaPersonas: Persona[] = [];
   personaNueva:Persona= {} as Persona;
+  personaDetalle:Persona= {} as Persona;
+
 
   constructor() {
     this.listaPersonas.push(new Persona('1', 'pere', 20));
@@ -19,6 +21,10 @@ export class C5Component implements OnInit {
   }
 
   ngOnInit(): void {}
+  mostrarLista() {
+
+    this.vista="lista";
+  }
   borrar(persona: Persona) {
 
     var posicion=this.listaPersonas.indexOf(persona);
@@ -31,5 +37,11 @@ export class C5Component implements OnInit {
 
     this.listaPersonas.push(persona);
     this.vista="lista";
+  }
+
+  detalle(persona:Persona):void {
+    this.vista="detalle";
+    // asigno el elemento que pulso en la lista
+    this.personaDetalle=persona;
   }
 }
