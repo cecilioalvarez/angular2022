@@ -1,8 +1,36 @@
+<div *ngIf="vista == 'lista'">
 <table>
   <tr *ngFor="let persona of listaPersonas">
     <td>{{ persona.dni }}</td>
     <td>{{ persona.nombre }}</td>
     <td>{{ persona.edad }}</td>
+    <td><input type="button" value="borrar" (click)="borrar(persona)" /></td>
 
   </tr>
 </table>
+
+<input type="button" value="insertar" (click)="verFormulario()" />
+</div>
+<div *ngIf="vista == 'formulario'">
+<form>
+  <p>Dni:<input type="text" name="dni" [(ngModel)]="personaNueva.dni" /></p>
+  <p>
+    Nombre:<input
+      type="text"
+      name="nombre"
+      [(ngModel)]="personaNueva.nombre"
+    />
+  </p>
+
+  <p>
+    Edad:<input type="text" name="edad" [(ngModel)]="personaNueva.edad" />
+  </p>
+  <p>
+    <input
+      type="button"
+      value="aceptar"
+      (click)="insertarPersona(personaNueva)"
+    />
+  </p>
+</form>
+</div>
