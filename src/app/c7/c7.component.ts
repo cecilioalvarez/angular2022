@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { PersonaRESTService } from './../persona-rest.service';
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-c7',
@@ -12,12 +13,13 @@ export class C7Component implements OnInit {
   // no se ve esta variable desde una promesa
   listaPersonas: Persona[] = [];
   personaNueva: Persona = {} as Persona;
+  personaDetalle: Persona = {} as Persona;
+  personaEditar:Persona ={} as Persona;
+
   vista: String = 'lista';
 
   constructor(private personaREST: PersonaRESTService) {
-    let observable: Observable<Persona[]> = personaREST.buscarTodos();
-
-    observable.subscribe((misamigos) => {
+    personaREST.buscarTodos().subscribe((misamigos) => {
       if (misamigos) this.listaPersonas = misamigos;
     });
   }
@@ -26,6 +28,32 @@ export class C7Component implements OnInit {
   verFormulario() {
 
     this.vista="formulario";
+
+  }
+
+  detalle(persona:Persona) {
+    this.vista="detalle";
+
+    this.personaREST.buscarUno(persona.dni).subscribe((persona)=> {
+
+          this.personaDetalle=persona;
+    })
+
+  }
+  editar(persona:Persona) {
+    this.vista="formularioEditar";
+    this.personaEditar=persona;
+  }
+  salvar(persona:Persona) {
+
+      this.personaREST.salvar(persona);
+
+  }
+  mostrarLista() {
+    this.vista="lista";
+   this. personaREST.buscarTodos().subscribe((personas) => {
+      if (personas) this.listaPersonas = personas;
+    });
 
   }
   insertarPersona(personaNueva: Persona) {

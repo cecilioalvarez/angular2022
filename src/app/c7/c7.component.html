@@ -5,7 +5,8 @@
     <td>{{ persona.nombre }}</td>
     <td>{{ persona.edad }}</td>
     <td><input type="button" value="borrar" (click)="borrar(persona)" /></td>
-
+    <td><input type="button" value="detalle" (click)="detalle(persona)" /></td>
+    <td><input type="button" value="editar" (click)="editar(persona)" /></td>
   </tr>
 </table>
 
@@ -33,4 +34,36 @@
     />
   </p>
 </form>
+</div>
+
+<div *ngIf="vista == 'detalle'">
+  {{ personaDetalle?.dni }}
+  {{ personaDetalle?.nombre }}
+  {{ personaDetalle?.edad }}
+  <input type="button" value="volver" (click)="mostrarLista()"/>
+</div>
+
+<div *ngIf="vista == 'formularioEditar'">
+  <p>editar</p>
+  <form>
+    <p>Dni:<input type="text" name="dni" [(ngModel)]="personaEditar.dni" /></p>
+    <p>
+      Nombre:<input
+        type="text"
+        name="nombre"
+        [(ngModel)]="personaEditar.nombre"
+      />
+    </p>
+
+    <p>
+      Edad:<input type="text" name="edad" [(ngModel)]="personaEditar.edad" />
+    </p>
+    <p>
+      <input
+        type="button"
+        value="aceptar"
+        (click)="salvar(personaEditar)"
+      />
+    </p>
+  </form>
 </div>
