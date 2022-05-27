@@ -46,7 +46,16 @@ export class C7Component implements OnInit {
   }
   salvar(persona:Persona) {
 
-      this.personaREST.salvar(persona);
+      this.personaREST.salvar(persona).subscribe((persona)=> {
+        // aqui la persona no se usa
+
+        this.personaREST.buscarTodos().subscribe((personas) => {
+          if (personas) this.listaPersonas = personas;
+          this.vista="lista";
+        });
+
+      });
+
 
   }
   mostrarLista() {
