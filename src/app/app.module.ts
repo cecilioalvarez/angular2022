@@ -14,6 +14,8 @@ import { C6Component } from './c6/c6.component';
 import { C7Component } from './c7/c7.component';
 import { ListaComponent } from './personas/lista/lista.component';
 import { DetalleComponent } from './personas/detalle/detalle.component';
+import { FormularioInsertarComponent } from './personas/formulario-insertar/formulario-insertar.component';
+import { FormularioEditarComponent } from './personas/formulario-editar/formulario-editar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { DetalleComponent } from './personas/detalle/detalle.component';
     C6Component,
     C7Component,
     ListaComponent,
-    DetalleComponent
+    DetalleComponent,
+    FormularioInsertarComponent,
+    FormularioEditarComponent,
+
   ],
   imports: [
     BrowserModule,

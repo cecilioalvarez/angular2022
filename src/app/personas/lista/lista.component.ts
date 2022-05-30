@@ -38,4 +38,14 @@ export class ListaComponent implements OnInit {
 
 
   }
+  editar(persona:Persona) {
+
+    this.router.navigate(["personas/formularioeditar",persona.dni])
+  }
+
+  verFormulario() {
+
+    this.router.navigate(["personas/formularioinsertar"])
+
+  }
 }
