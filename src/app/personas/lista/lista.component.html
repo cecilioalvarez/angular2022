@@ -1,0 +1,12 @@
+<table>
+  <tr *ngFor="let persona of listaPersonas">
+    <td>{{ persona.dni }}</td>
+    <td>{{ persona.nombre }}</td>
+    <td>{{ persona.edad }}</td>
+    <td><input type="button" value="borrar" (click)="borrar(persona)" /></td>
+    <td><input type="button" value="detalle" (click)="detalle(persona)" /></td>
+    <!--<td><input type="button" value="editar" (click)="editar(persona)" /></td>-->
+  </tr>
+</table>
+
+<!--<input type="button" value="insertar" (click)="verFormulario()" />-->

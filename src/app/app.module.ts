@@ -12,6 +12,7 @@ import { C4Component } from './c4/c4.component';
 import { C5Component } from './c5/c5.component';
 import { C6Component } from './c6/c6.component';
 import { C7Component } from './c7/c7.component';
+import { ListaComponent } from './personas/lista/lista.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { C7Component } from './c7/c7.component';
     C4Component,
     C5Component,
     C6Component,
-    C7Component
+    C7Component,
+    ListaComponent
   ],
   imports: [
     BrowserModule,
