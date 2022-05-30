@@ -1,6 +1,7 @@
 import { PersonaRESTService } from './../../persona-rest.service';
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/persona';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista',
@@ -12,7 +13,7 @@ export class ListaComponent implements OnInit {
 
   listaPersonas: Persona[] = [];
 
-  constructor(private personaREST:PersonaRESTService) {
+  constructor(private personaREST:PersonaRESTService, private router:Router) {
 
     personaREST.buscarTodos().subscribe((personas) => {
       if (personas) this.listaPersonas = personas;
@@ -32,6 +33,8 @@ export class ListaComponent implements OnInit {
   }
 
   detalle(persona:Persona) {
+
+    this.router.navigate(["personas/detalle",persona.dni])
 
 
   }

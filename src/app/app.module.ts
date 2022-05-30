@@ -13,6 +13,7 @@ import { C5Component } from './c5/c5.component';
 import { C6Component } from './c6/c6.component';
 import { C7Component } from './c7/c7.component';
 import { ListaComponent } from './personas/lista/lista.component';
+import { DetalleComponent } from './personas/detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListaComponent } from './personas/lista/lista.component';
     C5Component,
     C6Component,
     C7Component,
-    ListaComponent
+    ListaComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
