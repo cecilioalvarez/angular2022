@@ -1,3 +1,4 @@
+import { C8Component } from './c8/c8.component';
 import { FormularioInsertarComponent } from './personas/formulario-insertar/formulario-insertar.component';
 import { ListaComponent } from './personas/lista/lista.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:"personas/detalle/:dni", component:DetalleComponent},
   {path:"personas/formularioinsertar", component:FormularioInsertarComponent},
   {path:"personas/formularioeditar/:dni", component:FormularioEditarComponent},
+  {path:"c8", component:C8Component},
 
 ];
 

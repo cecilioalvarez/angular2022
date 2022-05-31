@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { ListaComponent } from './personas/lista/lista.component';
 import { DetalleComponent } from './personas/detalle/detalle.component';
 import { FormularioInsertarComponent } from './personas/formulario-insertar/formulario-insertar.component';
 import { FormularioEditarComponent } from './personas/formulario-editar/formulario-editar.component';
+import { C8Component } from './c8/c8.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import { FormularioEditarComponent } from './personas/formulario-editar/formular
     DetalleComponent,
     FormularioInsertarComponent,
     FormularioEditarComponent,
+    C8Component,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

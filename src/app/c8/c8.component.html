@@ -1,0 +1,67 @@
+<form #f="ngForm" (ngSubmit)="validar(f)">
+  <p>
+    <label for="dni">Dni:</label>
+    <input
+      type="text"
+      name="dni"
+      [(ngModel)]="persona.dni"
+      required
+      pattern="^\d{8}[a-zA-Z]$"
+      #dni="ngModel"
+    />
+    <span class="rojo" *ngIf="dni.untouched">*</span>
+    <span class="rojo"  *ngIf="dni.errors?.['required'] &&  dni.touched">el dni es obligatorio</span>
+    <span class="rojo" *ngIf="dni.errors?.['pattern'] && dni.touched"> el formato son 8 numeros y letra</span
+>
+  </p>
+
+  <p>
+    <label for="nombre">Nombre:</label
+    ><input
+      type="text"
+      name="nombre"
+      [(ngModel)]="persona.nombre"
+      required
+      #nombre="ngModel"
+    />
+    <span class="rojo" *ngIf="dni.untouched">*</span>
+    <span class="rojo" *ngIf="nombre.invalid &&  nombre.touched"
+      >el nombre es obligatorio</span
+    >
+
+    <span class="rojo" *ngIf="nombre.errors?.['required'] && nombre.touched"
+    >el nombre es obligatorio</span
+  >
+
+  </p>
+  <p>
+    <label for="edad">Edad:</label
+    ><input
+      type="text"
+      name="edad"
+      [(ngModel)]="persona.edad"
+      required
+      #edad="ngModel"
+    />
+    <span class="rojo" *ngIf="edad.untouched">*</span>
+    <span  class="rojo" *ngIf="edad.invalid && edad.touched">la edad es obligatoria</span>
+  </p>
+
+  <p>
+    <input type="submit" value="validar" [disabled]="!f.valid" />
+  </p>
+
+
+  <p *ngIf="f.untouched">
+    por favor rellene el formulario
+  </p>
+
+  <p *ngIf="f.submitted">
+    gracias por enviar las informacion
+  </p>
+
+  <p>formulario :{{ f.value | json }}</p>
+  <p>formulario valido:{{ f.valid }}</p>
+  <p>formulario invalido{{ f.invalid }}</p>
+  <p>formulario moificado {{ f.touched }}</p>
+</form>
