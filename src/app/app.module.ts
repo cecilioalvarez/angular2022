@@ -20,6 +20,7 @@ import { C8Component } from './c8/c8.component';
 import { C9Component } from './c9/c9.component';
 import { C10Component } from './c10/c10.component';
 import { FacturaComponent } from './factura/factura.component';
+import { IVAPipe } from './iva.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FacturaComponent } from './factura/factura.component';
     C9Component,
     C10Component,
     FacturaComponent,
+    IVAPipe,
 
   ],
   imports: [
