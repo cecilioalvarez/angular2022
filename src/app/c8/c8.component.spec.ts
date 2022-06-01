@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { C8Component } from './c8.component';
-
+/*
 describe('C8Component', () => {
   let component: C8Component;
   let fixture: ComponentFixture<C8Component>;
@@ -23,3 +23,4 @@ describe('C8Component', () => {
     expect(component).toBeTruthy();
   });
 });
+*/

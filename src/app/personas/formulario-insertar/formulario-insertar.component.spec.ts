@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormularioInsertarComponent } from './formulario-insertar.component';
 
+/*
 describe('FormularioInsertarComponent', () => {
   let component: FormularioInsertarComponent;
   let fixture: ComponentFixture<FormularioInsertarComponent>;
@@ -23,3 +24,4 @@ describe('FormularioInsertarComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/

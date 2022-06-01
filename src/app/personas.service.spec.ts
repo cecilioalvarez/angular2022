@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { PersonasService } from './personas.service';
-
+/*
 describe('PersonasService', () => {
   let service: PersonasService;
 
@@ -14,3 +14,4 @@ describe('PersonasService', () => {
     expect(service).toBeTruthy();
   });
 });
+*/

@@ -1,0 +1,30 @@
+<p>
+
+  {{alumno.nombre}}
+  {{alumno.apellidos}}
+  {{alumno.estudios}}
+  {{alumno.informatico}}
+
+<input type="checkbox" name="informatico" [(ngModel)]="alumno.informatico"/>informatico
+<input type="radio" value="tecnicos" [(ngModel)]="alumno.estudios"/>tecnico
+<input type="radio" value="universidad" [(ngModel)]="alumno.estudios"/>universidad
+<input type="radio" value="eso" [(ngModel)]="alumno.estudios"/>eso
+</p>
+
+<select [(ngModel)]="seleccion">
+<option *ngFor="let item of lista" [value]="item">
+
+  {{item}}
+</option>
+</select>
+{{seleccion}}
+
+<select name="miselect" [(ngModel)]="alumnoSeleccionado">
+
+<option [ngValue]="objeto" *ngFor="let objeto of listaAlumnos">
+
+    {{objeto.nombre}}
+</option>
+
+</select>
+{{alumnoSeleccionado| json}}
